@@ -3,8 +3,8 @@
 ## Checklist
  - [x] create checklist
  - [x] set up project structure
- - [ ] initialize server npm package
- - [ ] add testing suite to server
+ - [x] initialize server npm package
+ - [x] add testing suite to server
  - [ ] set up module structure for server
  - [ ] build/test controller for api
  - [ ] build/test express server with route
