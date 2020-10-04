@@ -2,7 +2,7 @@
 
 ## Checklist
  - [x] create checklist
- - [ ] set up project structure
+ - [x] set up project structure
  - [ ] initialize server npm package
  - [ ] add testing suite to server
  - [ ] set up module structure for server
