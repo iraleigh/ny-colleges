@@ -5,8 +5,8 @@
  - [x] set up project structure
  - [x] initialize server npm package
  - [x] add testing suite to server
- - [ ] set up module structure for server
- - [ ] build/test controller for api
+ - [x] set up module structure for server
+ - [x] build/test controller for api
  - [ ] build/test express server with route
  - [ ] initialize client as react app
  - [ ] build as one table of data
