@@ -7,19 +7,17 @@ class App extends Component {
   state = {
     schools: [],
     max: 0,
-    curr: 0
+    curr: 0,
+    page: []
   }
+
+  pageSize = 5;
 
   componentDidMount() {
-    this.load();
-  }
-
-  load = () => {
     this.fetchSchools()
       .then(res => {
-        this.setState({ schools: res, max: (res.length / 5) - 1 })
+        this.setState({ schools: res, max: (res.length / this.pageSize) - 1, page: this.sliceSchools(0, res) });
       })
-      .catch(err => console.log(err));
   }
 
   fetchSchools = async () => {
@@ -28,18 +26,17 @@ class App extends Component {
     return body;
   };
 
-  setPage = (page) => {
-    this.setState({ curr: page})
-  }
+  onPageChange = (next) => this.setState({ curr: next, page: this.sliceSchools(next)});
+  sliceSchools = (next, schools) => (schools || this.state.schools).slice(next * this.pageSize, (next * this.pageSize) + this.pageSize);
 
   render() {
     return (
       <div className="App">
-        <Table schools={this.state.schools.slice(this.state.curr * 5, (this.state.curr * 5) + 5)} />
+        <Table schools={this.state.page} />
         <PageNavigation
           max={this.state.max}
           curr={this.state.curr}
-          onChange={this.setPage}
+          onChange={(next) => this.setState({ curr: next, page: this.sliceSchools(next)})}
         />
       </div>
     );
