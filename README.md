@@ -7,9 +7,9 @@
  - [x] add testing suite to server
  - [x] set up module structure for server
  - [x] build/test controller for api
- - [ ] build/test express server with route
- - [ ] initialize client as react app
- - [ ] build as one table of data
+ - [x] build/test express server with route
+ - [x] initialize client as react app
+ - [x] build as one table of data
  - [ ] add/test sorting to table
  - [ ] add/test pagination to table
  - [ ] add proper logging
