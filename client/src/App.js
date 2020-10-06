@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import PageNavigation from './PageNavigation';
-import Table from './Table';
+import Schools from './Schools';
 
 class App extends Component {
   state = {
     schools: [],
     max: 0,
     curr: 0,
-    page: []
+    page: [],
+    field: "name"
   }
 
   pageSize = 5;
@@ -26,17 +27,31 @@ class App extends Component {
     return body;
   };
 
-  onPageChange = (next) => this.setState({ curr: next, page: this.sliceSchools(next)});
+  onPageChange = (next) => this.setState({ curr: next, page: this.sliceSchools(next) });
   sliceSchools = (next, schools) => (schools || this.state.schools).slice(next * this.pageSize, (next * this.pageSize) + this.pageSize);
+
+  sortBy = (field) => () => {
+    const schools = this.state.schools.sort((a, b) => a[field] > b[field]);
+    const page = this.sliceSchools(this.state.curr);
+    this.setState({ schools, page, field });
+  }
 
   render() {
     return (
-      <div className="App">
-        <Table schools={this.state.page} />
+      <div className="App container">
+        <h1>NY Colleges</h1>
+        <Schools
+          schools={this.state.page}
+          onNameClick={this.sortBy("name")}
+          onStateClick={this.sortBy("state")}
+          onNumStudentsClick={this.sortBy("numStudents")}
+          onAdminssionRateClick={this.sortBy("admissionRate")}
+          highlight={this.state.field}
+        />
         <PageNavigation
           max={this.state.max}
           curr={this.state.curr}
-          onChange={(next) => this.setState({ curr: next, page: this.sliceSchools(next)})}
+          onChange={this.onPageChange}
         />
       </div>
     );
