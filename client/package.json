@@ -41,6 +41,8 @@
       "!**/index.js",
       "!**/serviceWorker.js"
     ]
+  },
+  "devDependencies": {
+    "msw": "^0.21.2"
   }
-  
 }

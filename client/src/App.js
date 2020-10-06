@@ -14,10 +14,14 @@ class App extends Component {
 
   pageSize = 5;
 
+  // static getDerivedStateFromError(error) {
+  //   return { hasError: true };  
+  // }
+
   componentDidMount() {
     this.fetchSchools()
       .then(res => {
-        this.setState({ schools: res, max: (res.length / this.pageSize) - 1, page: this.sliceSchools(0, res) });
+        this.setState({ schools: res, max: Math.ceil(res.length / this.pageSize) - 1, page: this.sliceSchools(0, res) });
       })
   }
 
