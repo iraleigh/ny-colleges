@@ -1,3 +1,7 @@
 .headerCell:hover {
     cursor: pointer;
 }
+
+.school {
+    text-align: left;
+}

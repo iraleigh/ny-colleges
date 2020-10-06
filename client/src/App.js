@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PageNavigation from './PageNavigation';
 import Schools from './Schools';
+import BarChart from './BarChart';
 
 class App extends Component {
   state = {
@@ -21,7 +22,14 @@ class App extends Component {
   componentDidMount() {
     this.fetchSchools()
       .then(res => {
-        this.setState({ schools: res, max: Math.ceil(res.length / this.pageSize) - 1, page: this.sliceSchools(0, res) });
+        const schools = res.sort((a, b) => a.admissionRate > b.admissionRate);
+        const page = this.sliceSchools(0, schools);
+        this.setState({
+          schools: schools,
+          max: Math.ceil(schools.length / this.pageSize) - 1,
+          page: page,
+          field: "admissionRate"
+        });
       })
   }
 
@@ -44,6 +52,7 @@ class App extends Component {
     return (
       <div className="App container">
         <h1>NY Colleges</h1>
+        <BarChart schools={this.state.page} />
         <Schools
           schools={this.state.page}
           onNameClick={this.sortBy("name")}

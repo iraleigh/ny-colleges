@@ -10,13 +10,11 @@
  - [x] build/test express server with route
  - [x] initialize client as react app
  - [x] build as one table of data
- - [ ] add/test sorting to table
- - [ ] add/test pagination to table
- - [ ] add proper logging
- - [ ]
+ - [x] add/test sorting to table
+ - [x] add/test pagination to table
+ - [ ] add caching layer
  
 ## Bonus
- - [ ] add d3 to visualize data as bar graph of student size
- - [ ] overlay line graph of enrollment rate
- - [ ] change graph with pagination
+ - [x] add d3 to visualize data as bar graph of student size
+ - [x] change graph with pagination
  - [ ] set up Travis CI
