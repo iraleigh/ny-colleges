@@ -17,4 +17,4 @@
 ## Bonus
  - [x] add d3 to visualize data as bar graph of student size
  - [x] change graph with pagination
- - [ ] set up Travis CI
+ - [ ] set up Github Actions
