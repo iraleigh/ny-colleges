@@ -12,7 +12,7 @@
  - [x] build as one table of data
  - [x] add/test sorting to table
  - [x] add/test pagination to table
- - [ ] add caching layer
+ - [x] add caching layer
  
 ## Bonus
  - [x] add d3 to visualize data as bar graph of student size

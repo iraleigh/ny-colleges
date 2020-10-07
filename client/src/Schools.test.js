@@ -37,12 +37,12 @@ test('renders correct tbody elements', () => {
     const nameBodyIvy = getByText("Ivy");
     const stateBodyIvy = getByText("NY");
     const numStudentsBodyIvy = getByText("42");
-    const admissionRateBodyIvy = getByText("0.314");
+    const admissionRateBodyIvy = getByText("31.40%");
 
     const nameBodyPublic = getByText("Public");
     const stateBodyPublic = getByText("NY");
     const numStudentsBodyPublic = getByText("2701");
-    const admissionRateBodyPublic = getByText("0.333");
+    const admissionRateBodyPublic = getByText("33.30%");
 
     expect(nameBodyIvy).toBeInTheDocument();
     expect(stateBodyIvy).toBeInTheDocument();
