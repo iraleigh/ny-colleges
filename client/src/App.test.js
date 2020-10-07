@@ -40,12 +40,12 @@ test('fetches colleges from API', async () => {
   const nameBodyIvy = await screen.findByText("Ivy");
   const stateBodyIvy = await screen.findByText("NY");
   const numStudentsBodyIvy = await screen.findByText("42");
-  const admissionRateBodyIvy = await screen.findByText("0.314");
+  const admissionRateBodyIvy = await screen.findByText("31.40%");
 
   const nameBodyPublic = await screen.findByText("Public");
   const stateBodyPublic = await screen.findByText("NY");
   const numStudentsBodyPublic = await screen.findByText("2701");
-  const admissionRateBodyPublic = await screen.findByText("0.333");
+  const admissionRateBodyPublic = await screen.findByText("33.30%");
 
 
 
