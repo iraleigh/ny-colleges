@@ -47,4 +47,4 @@ $ PROD=true npm start
 ## Bonus
  - [x] add d3 to visualize data as bar graph of student size
  - [x] change graph with pagination
- - [ ] set up Github Actions
+ - [x] set up Github Actions
