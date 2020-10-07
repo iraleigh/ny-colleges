@@ -1,8 +1,7 @@
 # ny-colleges
 
 ## Cookbook
-For development
-
+Getting started
 ```
 $ git clone ...
 $ cd ny-colleges
