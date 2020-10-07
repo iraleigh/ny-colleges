@@ -26,7 +26,7 @@ jobs:
       env:
         CI: true
     - name: Upload Coverage Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage
-          path: client/coverage/coverage-final.json
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: client/coverage/coverage-final.json
