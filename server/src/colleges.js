@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const { backendHost, backendResource, backendParams, backendApiKey, cacheExpirationMs } = require("../config");
 
-const url = backendHost + backendResource + backendParams + backendApiKey;
+const url = backendHost + backendResource + backendParams + (process.env.API_KEY || backendApiKey);
 
 const get = async function () {
     try {
@@ -29,6 +29,7 @@ const get = async function () {
 
         return cache;
     } catch (error) {
+        console.error(error)
         return [];
     }
 }

@@ -1,5 +1,36 @@
 # ny-colleges
 
+## Cookbook
+For development
+
+```
+$ git clone ...
+$ cd ny-colleges
+$ npm install
+$ npm start
+```
+
+If you want to set the two projects up seperately, in one terminal run:
+```
+$ cd server
+$ npm install
+$ npm start
+```
+in a second terminal run:
+```
+$ cd client
+$ npm install
+$ npm start
+```
+
+If you want to see how they run deployed together as one app
+```
+$ cd client
+$ npm run build
+$ cd ../server
+$ PROD=true npm start
+```
+
 ## Checklist
  - [x] create checklist
  - [x] set up project structure
